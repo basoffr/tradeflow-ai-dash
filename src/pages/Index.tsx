@@ -1,5 +1,6 @@
 import TradingHeader from '@/components/TradingHeader';
 import DashboardKPIs from '@/components/DashboardKPIs';
+import TradingSignalsGrid from '@/components/TradingSignalsGrid';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Index = () => {
@@ -11,54 +12,11 @@ const Index = () => {
         {/* KPI Cards */}
         <DashboardKPIs />
         
-        {/* Main Dashboard Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-          {/* Trading Signals Card */}
-          <Card className="xl:col-span-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-bull rounded-full animate-pulse"></div>
-                Active Trading Signals
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
-                  <div>
-                    <div className="font-semibold">EUR/USD</div>
-                    <div className="text-sm text-muted-foreground">Long Signal</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-bull font-semibold">+0.87%</div>
-                    <div className="text-xs text-muted-foreground">Entry: 1.0850</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
-                  <div>
-                    <div className="font-semibold">GBP/JPY</div>
-                    <div className="text-sm text-muted-foreground">Short Signal</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-bull font-semibold">+1.23%</div>
-                    <div className="text-xs text-muted-foreground">Entry: 185.40</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
-                  <div>
-                    <div className="font-semibold">USD/CAD</div>
-                    <div className="text-sm text-muted-foreground">Long Signal</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-bear font-semibold">-0.34%</div>
-                    <div className="text-xs text-muted-foreground">Entry: 1.3720</div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
+        {/* Trading Signals Section */}
+        <TradingSignalsGrid />
+        
+        {/* Secondary Dashboard Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
           {/* Market Overview */}
           <Card>
             <CardHeader>
@@ -115,7 +73,7 @@ const Index = () => {
           </Card>
 
           {/* Performance Chart Placeholder */}
-          <Card className="xl:col-span-2">
+          <Card className="lg:col-span-2 xl:col-span-1">
             <CardHeader>
               <CardTitle>Performance Chart</CardTitle>
             </CardHeader>
