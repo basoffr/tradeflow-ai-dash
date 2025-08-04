@@ -2,6 +2,7 @@ import TradingHeader from '@/components/TradingHeader';
 import DashboardKPIs from '@/components/DashboardKPIs';
 import TradingSignalsGrid from '@/components/TradingSignalsGrid';
 import ChartInterface from '@/components/ChartInterface';
+import TradeJournal from '@/components/TradeJournal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
@@ -12,9 +13,10 @@ const Index = () => {
       
       <main className="container mx-auto px-6 py-8">
         <Tabs defaultValue="dashboard" className="w-full">
-          <TabsList className="grid w-fit grid-cols-2 mb-6">
+          <TabsList className="grid w-fit grid-cols-3 mb-6">
             <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
             <TabsTrigger value="charts">Chart Analysis</TabsTrigger>
+            <TabsTrigger value="journal">Trade Journal</TabsTrigger>
           </TabsList>
           
           <TabsContent value="dashboard" className="space-y-8">
@@ -100,6 +102,10 @@ const Index = () => {
           
           <TabsContent value="charts">
             <ChartInterface />
+          </TabsContent>
+          
+          <TabsContent value="journal">
+            <TradeJournal />
           </TabsContent>
         </Tabs>
       </main>
